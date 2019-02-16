@@ -14,13 +14,14 @@ import { Observable } from 'rxjs';
 export class AppComponent {
  
   public date_temp;
+  public refresh = 1000;
  
   constructor(private _demoService: DemoService) { }
 
   ngOnInit() {
     setInterval(() => {
       this.getDateTemp();
-    },  10000);
+    },  this.refresh);
   }
  
   getDateTemp() {
